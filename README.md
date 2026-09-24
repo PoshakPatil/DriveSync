@@ -41,7 +41,7 @@ Create a dedicated database and role (don't use the Postgres superuser for
 the app):
 
 ```sql
-CREATE ROLE drivesync_app LOGIN PASSWORD 'drivesync_app_pw';
+CREATE ROLE drivesync_app LOGIN PASSWORD 'your-password-here';
 CREATE DATABASE drivesync OWNER drivesync_app;
 ```
 
@@ -53,6 +53,11 @@ cd server
 Runs on `http://localhost:8080` by default. Config is externalized via env
 vars (see `server/src/main/resources/application.yml`) — override
 `DB_URL`, `DB_USERNAME`, `DB_PASSWORD`, `SERVER_PORT` as needed.
+
+
+Set `DB_PASSWORD` to the password you chose above before starting the server:
+`$env:DB_PASSWORD="your-password-here"` (PowerShell) or
+`export DB_PASSWORD=your-password-here` (bash).
 
 ### 3. Frontend (dashboard)
 ```bash
