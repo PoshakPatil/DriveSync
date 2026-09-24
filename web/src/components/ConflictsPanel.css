@@ -1,0 +1,130 @@
+.conflict-badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  background: #b3261e;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.05rem 0.5rem;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+.conflict-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.conflict-card {
+  border: 1px solid #f0c6c2;
+  background: #fdf6f5;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+}
+
+.conflict-path {
+  font-family: ui-monospace, monospace;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.conflict-backup-note {
+  font-size: 0.82rem;
+  color: #666;
+  margin-bottom: 0.6rem;
+}
+
+.conflict-backup-note code {
+  font-family: ui-monospace, monospace;
+  background: #f0f0f0;
+  padding: 0.05rem 0.35rem;
+  border-radius: 4px;
+}
+
+.conflict-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.conflict-option {
+  background: white;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  padding: 0.55rem 0.65rem;
+}
+
+.conflict-option.current {
+  border-color: #1a7f37;
+  background: #f2fbf3;
+}
+
+.conflict-option-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.conflict-option-device {
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.conflict-option-label {
+  font-size: 0.72rem;
+  color: #666;
+}
+
+.conflict-option-hash {
+  font-family: ui-monospace, monospace;
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 0.45rem;
+}
+
+.conflict-option button {
+  width: 100%;
+  font-size: 0.78rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+.conflict-option button:hover:not(:disabled) {
+  background: #f0f0f0;
+}
+
+.conflict-option button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.conflict-detected-at {
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  color: #999;
+}
+
+.resolved-history {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.resolved-card {
+  background: #f7f7f8;
+  border-color: #e2e2e2;
+}
+
+.conflict-resolution-note {
+  font-size: 0.8rem;
+  color: #666;
+}

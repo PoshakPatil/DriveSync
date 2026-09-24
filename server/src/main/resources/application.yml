@@ -1,0 +1,42 @@
+# DriveSync coordinator server configuration.
+# Every environment-specific value (DB location, credentials, port) is externalized
+# via env vars with sane local-dev defaults, per the "config not hardcoded" requirement.
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  application:
+    name: drivesync-server
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/drivesync}
+    username: ${DB_USERNAME:drivesync_app}
+    password: ${DB_PASSWORD:changeme}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      # update: Hibernate creates/adjusts tables from the @Entity classes automatically.
+      # Fine for a local learning project; a real production system would use versioned
+      # migrations (Flyway/Liquibase) instead so schema changes are reviewable and repeatable.
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  # Raise the multipart/JSON body limit a bit since file-change payloads can carry
+  # metadata for many files at once during catch-up sync.
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+drivesync:
+  # Where file CONTENT (not metadata) is stored, content-addressed by SHA-256 hash.
+  # Deliberately not Postgres - see BlobStorageService for why.
+  blob-storage-dir: ${BLOB_STORAGE_DIR:./data/blobs}
+
+logging:
+  level:
+    com.drivesync.server: DEBUG

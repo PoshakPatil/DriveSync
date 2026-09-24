@@ -1,0 +1,30 @@
+# --- Backend (Maven / Java) ---
+server/target/
+server/backend.log
+server/data/
+*.class
+
+# --- Frontend (Node / Vite) ---
+web/node_modules/
+web/dist/
+web/frontend.log
+web/.vite/
+
+# --- Watcher client (Maven / Java) ---
+watcher-client/target/
+watcher-client/*.log
+watcher-client/dependency-reduced-pom.xml
+
+# --- Stray logs from manual testing, wherever they land ---
+*.log
+
+# --- IDE / OS ---
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# --- Local sync test folders (created during manual end-to-end testing) ---
+/sync-folder-a/
+/sync-folder-b/
